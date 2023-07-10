@@ -1,0 +1,104 @@
+[
+  {
+    "cloudName": "AzureCloud",
+    "homeTenantId": "5557555e-a962-4ace-ab13-6b2cbbbb6e9e",
+    "id": "a74883c4-7b89-4e5d-929c-8919b2dfb0ca",
+    "isDefault": true,
+    "managedByTenants": [],
+    "name": "Visual Studio Professional Subscription",
+    "state": "Enabled",
+    "tenantId": "5557555e-a962-4ace-ab13-6b2cbbbb6e9e",
+    "user": {
+      "name": "kevin.hayes@ambigai.net",
+      "type": "user"
+    }
+  }
+]
+
+//bash
+az group create --name myResourceGroup --location centralindia
+az group delete --name myResourceGroup
+
+//PS
+Connect-AzAccount
+New-AzResourceGroup -Name myResourceGroup -Location EastUS
+$registry = New-AzContainerRegistry -ResourceGroupName "myResourceGroup" -Name "mycontainerregistry" -EnableAdminUser -Sku Basic
+Connect-AzContainerRegistry -Name $registry.Name
+
+
+//registry name should be unique
+az acr create --resource-group myResourceGroup \
+  --name mycr1995 --sku Basic
+  
+  
+//"name": "mycr1995"
+// "loginServer": "mycr1995.azurecr.io"
+
+az acr login --name mycr1995
+
+docker pull mcr.microsoft.com/hello-world
+
+docker tag mcr.microsoft.com/hello-world mycr1995.azurecr.io/hello-world:v1
+
+//verify the tagged image, when run, there will be two images with same image id
+docker images
+
+docker push mycr1995.azurecr.io/hello-world:v1
+
+//remove the hello-world:v1 image from your local Docker environment
+//only removes from local not on ACR
+//untags
+docker rmi mycr1995.azurecr.io/hello-world:v1
+
+//List container images on ACR
+az acr repository list --name mycr1995 --output table
+
+//UI- mycr1995 | Repositories
+
+//lists the tags on the hello-world repository
+az acr repository show-tags --name mycr1995 --repository hello-world --output table
+
+//pull and run the hello-world:v1 container image from your ACR
+docker run mycr1995.azurecr.io/hello-world:v1
+
+//list all the running container
+docker ps -a
+
+//list all images
+docker image ls
+
+//delete container by id
+docker rm 7ab3630bf721
+
+//delete the image for the above deleted container by image id
+docker rmi fce289e99eb9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
