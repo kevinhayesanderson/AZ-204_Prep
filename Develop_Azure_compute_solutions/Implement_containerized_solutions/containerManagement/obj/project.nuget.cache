@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sIef4x7jXbgoX2WK5CWWU1dC7WPh6fxbpdrvyGpjqaCSJJsmNn/BmZ8rM3XbvSl/gNuJ21X+oIQ/07R4ZeMelA==",
+  "dgSpecHash": "8gMNZEWwJJUrOq1n/c8t4xzwws9fTtaI9j55PK/wGX5bb1c1/+DTpVw4n2G08AnBdpyGxjlt/qVkoPASWB05Sw==",
   "success": true,
-  "projectFilePath": "E:\\Azure\\AZ-204\\Develop_Azure_compute_solutions\\Implement_containerized_solutions\\containerManagement\\containerManagement.csproj",
+  "projectFilePath": "e:\\Azure\\AZ-204\\Develop_Azure_compute_solutions\\Implement_containerized_solutions\\containerManagement\\containerManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kevin\\.nuget\\packages\\azure.containers.containerregistry\\1.1.0\\azure.containers.containerregistry.1.1.0.nupkg.sha512",
     "C:\\Users\\kevin\\.nuget\\packages\\azure.core\\1.32.0\\azure.core.1.32.0.nupkg.sha512",

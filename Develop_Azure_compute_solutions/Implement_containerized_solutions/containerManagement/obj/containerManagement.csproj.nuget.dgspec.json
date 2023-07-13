@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Azure\\AZ-204\\Develop_Azure_compute_solutions\\Implement_containerized_solutions\\containerManagement\\containerManagement.csproj": {}
+    "e:\\Azure\\AZ-204\\Develop_Azure_compute_solutions\\Implement_containerized_solutions\\containerManagement\\containerManagement.csproj": {}
   },
   "projects": {
-    "E:\\Azure\\AZ-204\\Develop_Azure_compute_solutions\\Implement_containerized_solutions\\containerManagement\\containerManagement.csproj": {
+    "e:\\Azure\\AZ-204\\Develop_Azure_compute_solutions\\Implement_containerized_solutions\\containerManagement\\containerManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Azure\\AZ-204\\Develop_Azure_compute_solutions\\Implement_containerized_solutions\\containerManagement\\containerManagement.csproj",
+        "projectUniqueName": "e:\\Azure\\AZ-204\\Develop_Azure_compute_solutions\\Implement_containerized_solutions\\containerManagement\\containerManagement.csproj",
         "projectName": "containerManagement",
-        "projectPath": "E:\\Azure\\AZ-204\\Develop_Azure_compute_solutions\\Implement_containerized_solutions\\containerManagement\\containerManagement.csproj",
+        "projectPath": "e:\\Azure\\AZ-204\\Develop_Azure_compute_solutions\\Implement_containerized_solutions\\containerManagement\\containerManagement.csproj",
         "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "E:\\Azure\\AZ-204\\Develop_Azure_compute_solutions\\Implement_containerized_solutions\\containerManagement\\obj\\",
+        "outputPath": "e:\\Azure\\AZ-204\\Develop_Azure_compute_solutions\\Implement_containerized_solutions\\containerManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
