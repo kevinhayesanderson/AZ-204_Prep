@@ -1,0 +1,11 @@
+https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/containerregistry/Azure.Containers.ContainerRegistry/samples
+
+dotnet new console -n containerManagement
+
+cd containerManagement
+
+dotnet add package Azure.Containers.ContainerRegistry --prerelease
+
+//for azure authentication in app
+https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/identity/Azure.Identity/README.md
+https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/identity/Azure.Identity#authenticating-via-the-azure-cli

@@ -1,0 +1,13 @@
+An Azure container registry stores container images and OCI artifacts.
+
+An image or artifact consists of a manifest and layers.
+
+A manifest describes the layers that make up the image or artifact. It is uniquely identified by its digest.
+
+An image or artifact can also be tagged to give it a human-readable alias. An image or artifact can have zero or more tags associated with it, and each tag uniquely identifies the image.
+
+A collection of images or artifacts that share the same name, but have different tags, is a repository.
+
+
+
+

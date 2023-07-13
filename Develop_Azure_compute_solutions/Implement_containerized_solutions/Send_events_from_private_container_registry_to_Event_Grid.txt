@@ -1,0 +1,61 @@
+RESOURCE_GROUP_NAME=myResourceGroup
+
+az group create --name $RESOURCE_GROUP_NAME --location eastus
+
+ACR_NAME=<acrName>
+
+az acr create --resource-group $RESOURCE_GROUP_NAME --name $ACR_NAME --sku Basic
+
+
+SITE_NAME=<your-site-name>
+
+az deployment group create \
+    --resource-group $RESOURCE_GROUP_NAME \
+    --template-uri "https://raw.githubusercontent.com/Azure-Samples/azure-event-grid-viewer/master/azuredeploy.json" \
+    --parameters siteName=$SITE_NAME hostingPlanName=$SITE_NAME-plan
+
+//register the Event Grid resource provider. 
+
+az provider register --namespace Microsoft.EventGrid
+
+// check the status of registration
+az provider show --namespace Microsoft.EventGrid --query "registrationState"
+
+//Subscribe to registry events
+
+ACR_REGISTRY_ID=$(az acr show --name $ACR_NAME --query id --output tsv)
+APP_ENDPOINT=https://$SITE_NAME.azurewebsites.net/api/updates
+
+az eventgrid event-subscription create \
+    --name event-sub-acr \
+    --source-resource-id $ACR_REGISTRY_ID \
+    --endpoint $APP_ENDPOINT
+
+//Trigger registry events
+//ACR Tasks is a feature of Azure Container Registry that allows you to build container images in the cloud, without needing the Docker Engine installed on your local machine.
+
+//Build and push image
+az acr build --registry $ACR_NAME --image myimage:v1 -f Dockerfile https://github.com/Azure-Samples/acr-build-helloworld-node.git#main
+
+//verify that the built image is in your registry
+az acr repository show-tags --name $ACR_NAME --repository myimage
+
+//Delete the image
+az acr repository delete --name $ACR_NAME --image myimage:v1
+
+//Clean up resources
+az group delete --name $RESOURCE_GROUP_NAME
+
+
+
+
+
+
+
+
+
+
+
+
+
+
