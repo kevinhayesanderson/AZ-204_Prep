@@ -1,0 +1,82 @@
+%YAML 1.2
+%TAG !! tag:yaml.org,2002:
+---
+# College Management System
+# This is a simple system
+# that shows how to manage
+# courses and students
+
+course:
+  - 5001: &course5001
+      courseId: 5001
+      courseName: Computer Science
+      courseDuration: 4
+      courseType: Engineering
+      isFullTime: false
+      itemsRequired:
+        laptop: null
+        mobile: null
+        internet: null
+  - 5002:
+      courseId: 5002
+      courseName: MBA
+      courseDuration: 2
+      courseType: Management
+      itemsRequired:
+        ? laptop
+        ? mobile
+        ? internet
+
+hobbycourse:
+  - computer hobby:
+      <<: *course5001
+      isWeekend: true
+      itemsRequired: {laptop, mobile, internet}
+
+student:
+  -
+    studentId: 130
+    firstName: "Ashok"
+    lastName: 'Kumar'
+    age: 35
+    weight: 70.5
+    isMale: true
+    address: |    
+            1301 Race Street,
+            Philadelphia,
+            US.
+    dob: !!str 1995-10-20
+    registeredDate: 2015-06-25T14:30:00.000Z
+    enrolledCourses:
+      - 5001
+      - 5002
+      - 5003
+    currentCourse: &curCourse 5001
+    currentCourseDetails: *course5001
+  -
+    studentId: 131
+    firstName: James
+    lastName: Smith
+    age: 35
+    weight: 70.5
+    isMale: true
+    address: >
+            1301 Race Street,
+            Philadelphia,
+            US.
+    dob: 1995-10-20
+    registeredDate: 2015-06-25T14:30:00.000Z
+    enrolledCourses: [5001, 5002, 5003]
+    currentCourse: *curCourse
+    currentCourseDetails:
+        <<: *course5001
+        isFullTime: true
+  -
+    { studentId: 132, firstName: Robert, lastName: Smith }
+
+---
+
+staff:
+  - 6001:
+      id: 6001
+      name: James
