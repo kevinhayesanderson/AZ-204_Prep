@@ -1,0 +1,50 @@
+# comment
+
+# multiline
+# comment
+
+#key value pair
+key: value
+studentId: 130
+first Name: Kevin
+"lastName": Anderson
+"age": 28
+
+#two space indentation
+student:
+  - studentId: 130
+    key: value
+    first Name: Kevin
+    "lastName": Anderson
+    "age": 28
+    weight: 70.5
+    dob: 1995-03-24
+  - studentId: 131
+    key: value
+    first Name: Hayes
+    "lastName": Anderson
+    "age": 28
+    weight: 80.5
+    dob: 1995-03-25
+
+#data types
+#scalar types
+int: 154
+float: 154.323
+string: Kevin
+string1: "Kevin"
+string2: "Kevin"
+bool: true
+dateTime: 2023-07-14T15:31:48Z
+image: !!binary "\
+  R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\
+  OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\
+  +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\
+  AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs="
+
+#collection types
+sequence: -5001
+  -5002
+  -5003
+  -'5004'
+Map:
