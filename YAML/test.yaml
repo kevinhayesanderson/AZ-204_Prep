@@ -19,6 +19,10 @@ student:
     "age": 28
     weight: 70.5
     dob: 1995-03-24
+    address: | #Block style, preserve new line
+      1306 Race Street,
+      Philadelphia
+      USA
   - studentId: 131
     key: value
     first Name: Hayes
@@ -26,14 +30,18 @@ student:
     "age": 28
     weight: 80.5
     dob: 1995-03-25
-
+    address: > #Block style, new line is space
+      1306 Race Street,
+      Philadelphia
+      USA
+  - { studentId: 132, firstName: Robert, lastName: smith }
 #data types
 #scalar types
 int: 154
 float: 154.323
-string: Kevin
-string1: "Kevin"
-string2: "Kevin"
+string: Kevin #Flow Style
+string1: "Kevin" #Flow Style
+string2: "Kevin" #Flow Style
 bool: true
 dateTime: 2023-07-14T15:31:48Z
 image: !!binary "\
@@ -42,9 +50,12 @@ image: !!binary "\
   +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\
   AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs="
 
-#collection types
+#collection types, #block style
 sequence: -5001
   -5002
   -5003
   -'5004'
 Map:
+
+#Flow Style in collection types
+enrolledCourses: [5001, 5002, 5003]

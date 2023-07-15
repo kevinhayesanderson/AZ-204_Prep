@@ -1,0 +1,3 @@
+port: 8080
+directory: "data"
+indexFiles: ["index.html", "index.php"]
