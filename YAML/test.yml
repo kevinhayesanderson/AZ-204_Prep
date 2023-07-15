@@ -1,3 +1,15 @@
 port: 8080
 directory: "data"
 indexFiles: ["index.html", "index.php"]
+
+countries:
+  - &india
+    name: India
+    capital: New Delhi
+  - &china
+    name: China
+    capital: Beijing
+  - &germany
+    name: Germany
+    capital: Berlin
+summary: [*india, *china, *germany]

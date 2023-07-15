@@ -1,0 +1,67 @@
+# College Management System
+# This is a simple system
+# this show how to manage
+# courses and students
+
+course:
+  - 5001: &course5001
+      courseId: 5001
+      courseName: Computer Science
+      courseDuration: 4
+      courseType: Engineering
+      isWeekend: false
+      itemsRequired:
+        ? laptop
+        ? mobile
+        ? internet
+  - 5002: &course5002
+      courseId: 5002
+      courseName: MBA
+      courseDuration: 2
+      courseType: Management
+      isWeekend: false
+      itemsRequired: {laptop,mobile, internet }
+
+hobbycourse:
+  - computerHobby:
+      <<: [*course5001]
+      isWeekend: true
+
+student:
+  -
+    studentId: 130
+    firstName: Ashok
+    lastName: Kumar
+    age: 35
+    weight: 70.5
+    isMale: true
+    dob: 1995-10-20
+    address: |
+            1301 Race Street,
+            Philadelphia,
+            US
+    registeredDate: 2015-06-05T02:30:00Z
+    enrolledCourses:
+        - 5001
+        - 5002
+        - 5003
+    currentCourse: &curCourse 5001
+    currentCourseDetails: *course5001
+  -   
+    studentId: 131
+    firstName: James
+    lastName: Smith
+    age: 35
+    weight: 70.5
+    isMale: true
+    dob: 1995-10-20
+    address: >
+            1301 Race Street,
+            Philadelphia,
+            US
+    registeredDate: 2015-06-05T02:30:00Z
+    enrolledCourses: [5001, 5002, 5003]
+    currentCourse: *curCourse
+    currentCourseDetails: *course5001
+  - 
+    {studentId: 132, firstName: Robert, lastName: Smith}
