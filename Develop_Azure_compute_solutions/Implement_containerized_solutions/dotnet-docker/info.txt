@@ -1,3 +1,31 @@
+docker build --tag dotnet-docker .
+docker images
+docker tag dotnet-docker:latest dotnet-docker:v1.0.0
+docker rmi dotnet-docker:v1.0.0
+docker run dotnet-docker
+docker run --publish 5000:80 dotnet-docker
+docker run -d -p 5000:80 dotnet-docker
+docker ps
+docker stop quirky_carson
+docker ps --all
+docker rm quirky_carson affectionateupdate_feistel bold_hugle
+docker run -d -p 5000:80 --name dotnet-app dotnet-docker
+docker volume create postgres-data
+docker network create postgres-net
+docker run --rm -d -v postgres-data:/var/lib/postgresql/data --network postgres-net --name db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=example postgres
+docker exec -ti db psql -U postgres
+docker build --tag dotnet-docker .
+docker stop dotnet-app
+docket rm dotnet-app
+docker run --rm -d --network postgres-net --name dotnet-app -p 5000:80 dotnet-docker
+docker stop db-admin dotnet-app db
+docker-compose up --build
+docker-compose up --build -d
+docker-compose stop
+docker-compose down
+
+
+
 ACCESS TOKEN DESCRIPTION
 clockboxci
 ACCESS PERMISSIONS
