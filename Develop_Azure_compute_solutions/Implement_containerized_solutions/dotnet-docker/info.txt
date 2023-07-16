@@ -1,0 +1,11 @@
+ACCESS TOKEN DESCRIPTION
+clockboxci
+ACCESS PERMISSIONS
+Read, Write, Delete
+To use the access token from your Docker CLI client:
+
+1. Run docker login -u kevinhayes1995
+
+2. At the password prompt, enter the personal access token.
+
+dckr_pat_IVTvx7bZszeVtIfbXKVVXQy7LEA
