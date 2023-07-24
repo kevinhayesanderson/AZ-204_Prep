@@ -1,0 +1,73 @@
+git clone https://github.com/Azure-Samples/aci-helloworld.git
+
+docker build ./aci-helloworld -t aci-tutorial-app
+
+docker images
+
+//Run the container locally
+//The -d switch lets the container run in the background, while -p allows you to map an arbitrary port on your computer to port 80 in the container.
+docker run -d -p 8080:80 aci-tutorial-app
+
+az group create --name myResourceGroup --location centralindia
+
+az acr create --resource-group myResourceGroup --name <acrName> --sku Basic
+
+az acr login --name <acrName>
+
+az acr show --name <acrName> --query loginServer --output table
+
+docker tag aci-tutorial-app <acrLoginServer>/aci-tutorial-app:v1
+
+docker push <acrLoginServer>/aci-tutorial-app:v1
+
+az acr repository list --name <acrName> --output table
+
+az acr repository show-tags --name <acrName> --repository aci-tutorial-app --output table
+
+az acr show --name <acrName> --query loginServer
+
+//Deploy container
+az container create --resource-group myResourceGroup --name aci-tutorial-app --image myacr19951.azurecr.io/aci-tutorial-app:v1 --cpu 1 --memory 1 --registry-login-server myacr19951.azurecr.io --registry-username myacr19951 --registry-password ErnjbdoHkr9Pav8QzHrB7myZzCs4THw3+91PJJZp8Y+ACRAWaq2w --ip-address Public --dns-name-label myacr19951Cont --ports 80
+
+//Verify deployment progress
+az container show --resource-group myResourceGroup --name aci-tutorial-app --query instanceView.state
+
+//display the container's fully qualified domain name (FQDN)
+az container show --resource-group myResourceGroup --name aci-tutorial-app --query ipAddress.fqdn
+
+// the log output of the container
+az container logs --resource-group myResourceGroup --name aci-tutorial-app
+
+
+
+::Run multi-container application locally::
+
+//Run docker-compose up, which uses the sample docker-compose.yaml file to build the container image, 
+//download the Redis image, and start the application:
+docker-compose up --build -d
+
+docker images
+
+docker ps
+
+docker-compose down
+
+docker-compose push
+
+az acr repository show --name <acrName> --repository azuredocs/azure-vote-front
+
+docker login azure
+
+docker context create aci myacicontext
+
+docker context ls
+
+docker context use myacicontext
+
+docker compose up
+
+docker ps
+
+docker logs azurevotingappredis_azure-vote-front
+
+docker compose down
