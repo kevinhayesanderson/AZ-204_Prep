@@ -1,3 +1,10 @@
+Skill:
+  - Develop Azure compute solutions (25–30%): -1
+  - Develop for Azure storage (15–20%): -3
+  - Implement Azure security (20–25%): -2
+  - Monitor, troubleshoot, and optimize Azure solutions (15–20%): -5
+  - Connect to and consume Azure services and third-party services (15–20%): -4
+
 1.Develop Azure compute solutions (25–30%):
   Implement containerized solutions:
     - Create and manage container images for solutions
@@ -35,6 +42,7 @@
     - Authenticate and authorize users and apps by using Microsoft Azure Active Directory (Azure AD), part of Microsoft Entra
     - Create and implement shared access signatures
     - Implement solutions that interact with Microsoft Graph
+    
   Implement secure Azure solutions:
     - Secure app configuration data by using App Configuration or Azure Key Vault
     - Develop code that uses keys, secrets, and certificates stored in Azure Key Vault

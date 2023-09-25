@@ -71,3 +71,10 @@ docker ps
 docker logs azurevotingappredis_azure-vote-front
 
 docker compose down
+
+
+
+
+Update-AzFunctionApp -Name myFunctionApp1995 `
+    -ResourceGroupName myResourceGroup `
+    -IdentityType SystemAssigned
