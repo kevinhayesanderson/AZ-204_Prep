@@ -1,0 +1,13 @@
+?
+sv=2022-11-02& //Version of storage api
+ss=bfqt& //services-blob,file,queue,table
+srt=sco& // resource type-Service,Container,Object
+sp=rwdlacupiytfx& //permission-read,write,delete, etc
+se=2023-10-08T21:12:29Z& //end date
+st=2023-10-08T13:12:29Z& //effective datetime
+spr=https,http& //protocols for request
+sig=D4pN8frzokusObsjCYAJLVVn9V%2B9OLi7%2BHj%2BcDLsd18%3D //cryptographic signature
+
+https://acsstorageacnt.blob.core.windows.net/container1/%2CDanaInfo%3Dcitrix-storefront.schaeffler.com%2CSSL%2BQ29udHJvbGxlclJBU0NXQS5ERy1BenVyZS1HV0MtRGVza3RvcC1XMTAtUGVycyAkUDczMw--.ica?sp=r&st=2023-10-08T13:32:25Z&se=2023-10-08T21:32:25Z&spr=https&sv=2022-11-02&sr=b&sig=e29W2VOs7R2gE%2B9C7xQEL6%2Br9Rw9rCE4QTgNS9sH19g%3D
+
+https://pslabhpiog.blob.core.windows.net/?sv=2022-11-02&ss=b&srt=sco&sp=rltfx&se=2023-10-08T21:55:55Z&st=2023-10-08T13:55:55Z&spr=https&sig=%2BJ2vWKrhv%2FIVUup7HyWttBYwCpPyur08uxyT3Zeh0%2BA%3D
